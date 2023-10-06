@@ -36,8 +36,12 @@ if (Input.GetKeyDown(KeyCode.Space))
 {
       Instantiate(laserBolt, blaster.transform.position, laserBolt.transform.rotation);
 }
-}
 
+}
+private void OnTriggerEnter(Collider other)
+{
+  Destroy(other.gameObject);
+}
 }
 // move forwardscript
 
