@@ -10,6 +10,10 @@ public float speed;
 
 public float xRange; 
 
+public Transform blaster; 
+
+public GameObject laserbolt;
+
 void Start() 
 {
 
@@ -28,7 +32,26 @@ if (transform.postition.x > xRange)
 {
 transform.position = new Vector3(xRange,transform.postion.y, transform.postion.z)
 }
+if (Input.GetKeyDown(KeyCode.Space))
+{
+      Instantiate(laserBolt, blaster.transform.position, laserBolt.transform.rotation);
+}
 }
 
 }
+// move forwardscript
 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MoveForward : MonoBehaviour
+{
+public float speed = 50.0f;
+
+
+void Update ()
+  {
+    transform.Translate(Vector3.forward * Time.deltaTime * speed); 
+  }
+}
