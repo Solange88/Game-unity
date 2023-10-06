@@ -49,6 +49,9 @@ private void HandleMouseLook()
 }
 private void ApplyFinalMovements()
 {
+   if(!characterController.isGrounded) 
+   moveDirection.y -= gravity * Time.deltaTime; 
+characterController.Move(moveDirection * Time.deltaTime); 
 
 }
 }
