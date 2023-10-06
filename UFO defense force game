@@ -90,3 +90,66 @@ Time.timeScale = 0;
 }
 }
 }
+//pick up item
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine; 
+
+public class PickUpController : MonoBehaviour
+{
+//detect collision or trigger with player and object
+private void OnTriggerEnter(Collider other) 
+{
+   PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
+   if (playerInventory != null)
+{
+playerInventory.ItemCollected();
+gameObject.SetActive(false);
+}
+
+}
+
+
+}
+
+//items 
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine; 
+ 
+
+public class InventoryUI : MonoBehaviour
+{
+   private TextMeshProUGUI itemText; 
+
+void Start()
+{
+itemText = GetComponent<TextMeshProUGUI>();
+}
+public void UpdateItemText(PlayerInventory playerInventory)
+{
+   itemText.text = playerInventory.NumberOfItems.ToString();
+}
+}
+//player inventory
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine; 
+using UnityEngine.Events;
+
+public class PlayerInventory : MonoBehaviour 
+{
+public int NumberofItems { get; private set;} 
+
+public UnityEvent<PlayerInventory> OnItemCollected;
+
+public void ItemCollected()
+{
+NumberOfItems++; 
+OnItemCollected.Invoke(this);
+}
+}
+
