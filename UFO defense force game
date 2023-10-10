@@ -167,6 +167,6 @@ public int ufoIndex;
 
 void Update()
 {
-   Instatiate(ufoPrefabs[ufoIndex], new Vector3(0,0,20), ufoPrefabs[ufoIndex].transform.rotation);
+   Instantiate(ufoPrefabs[ufoIndex], new Vector3(0,0,20), ufoPrefabs[ufoIndex].transform.rotation);
 }
 }
