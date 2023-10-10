@@ -163,10 +163,18 @@ using UnityEngine;
 public class EnemySpawnManager : MonoBehaviour
 {
 public GameObject [] ufoPrefabs;
-public int ufoIndex; 
+private float spawnRangeX = 20f;
+
+privats float soawnPosZ = 20f;
 
 void Update()
 {
-   Instantiate(ufoPrefabs[ufoIndex], new Vector3(0,0,20), ufoPrefabs[ufoIndex].transform.rotation);
+if(Input.GetKeyDown(KeyCode.S))
+   {
+Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX),0, spawnPosZ);
+   int ufoIndex = Random.Range(0,ufoPrefabs.Length); //picks a random UFO from the array 
+   Instantiate(ufoPrefabs[ufoIndex], spawnPos, ufoPrefabs[ufoIndex].transform.rotation);
+
+   }
 }
 }
