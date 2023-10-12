@@ -109,9 +109,16 @@ gameObject.SetActive(false);
 }
 
 }
-
-
+public void SpawnNextCircle()
+{
+Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.c / 2),
+                                   Random.Range(-size.y / 2, size.y / 2), 
+                                    0);
+//with destroy out of bounds script and moveforward script
+                                      
 }
+}
+
 
 //items 
 
