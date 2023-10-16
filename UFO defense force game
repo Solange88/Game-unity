@@ -208,3 +208,22 @@ void OnTriggerEnter(Collider other)
 
 }
 }
+//score manager
+using System.Collections;
+using System.Collections.Generic;
+usingUnityEngine;
+using UnityEngine.UI;
+
+public class Score : MonoBehaviour 
+{
+public static int scoreValue = 0;
+   
+void Start () 
+{
+   score = GetComponent<Text> ();
+}
+void Update () 
+{
+   score.text = "Score: " + scoreValue;
+}
+}
