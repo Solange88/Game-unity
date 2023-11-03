@@ -36,3 +36,20 @@ private void OnTriggerEnter(Collider other)
 triggerEnterEvent.Invoke();
 }
 }
+//
+
+using UnityEngine;
+using UnityEngine.Events;
+
+public class Sqaure : MonoBehaviour
+
+{
+   public UnityEvent pickupSqaure;
+  private void OnTriggerEnter2D(Collider2D collision) 
+{
+   if(collision gameObject CompareTag("Player")) 
+{
+   pickupSquare Invoke(); 
+}
+}
+}
