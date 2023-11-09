@@ -25,7 +25,13 @@ if (tempObj == null)
    return;
 
 var otherID = tempObj.idObj;
- Debug.Log(otherID == idObj ? "Matched" : "No Match");   
+if (otherID == idObj)
+{
+ Debug.Log(message:"Matched");  
+}
+else 
+{
+  Debug.Log(message:"No Match");
 }
 }
 }
