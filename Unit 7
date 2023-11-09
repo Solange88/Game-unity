@@ -88,6 +88,7 @@ public class Draggable Behaviour : MonoBehaviour
 {
    private Camera cameraObj;
    public bool draggable;
+   public UnityEvent startDragEvent, endDragEvent;
 
 void Start()
 {
@@ -96,11 +97,15 @@ void Start()
 
 public IEnumerator OnMouseDown()
 {
+   offset = transform.postion - cameraObj.ScreenToWorldPoint(Input.mousrPosition);
    draggable = true;
+   yield return new WaitForFixedUpdate();
 
 while (draggable) 
 {
    yield return new WaitForFixedUpdate();
+   position = cameraObj.ScreenToViewportPoint(Input.mousePosition);
+   transform.postion;
 }
 
 }
