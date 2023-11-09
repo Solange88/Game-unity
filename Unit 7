@@ -81,3 +81,32 @@ public void Start()
 }
 
 }
+
+//draggable behaviour
+
+public class Draggable Behaviour : MonoBehaviour
+{
+   private Camera cameraObj;
+   public bool draggable;
+
+void Start()
+{
+   cameraObj = Camera.main;
+}
+
+public IEnumerator OnMouseDown()
+{
+   draggable = true;
+
+while (draggable) 
+{
+   yield return new WaitForFixedUpdate();
+}
+
+}
+
+private void OnMouseUp()
+{
+   draggable = false;
+}
+}
