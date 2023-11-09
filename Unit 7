@@ -6,7 +6,7 @@ using Unity Engine;
 
 public class ID : ScriptableObject
 {
-
+public ID idObj;
 }
 
 //matchbehaviour
@@ -16,15 +16,16 @@ using UnityEngine;
 public class MatchBehaviour : MonoBehaviour
 {
 public ID idObj;
+private ID otherID; 
 
 private void OnTriggerEnter (Collider other) 
 {
-    var otherID = other.GetComponent<IDContainerBehaviour>().idObj;
-    if (otherID == idObj)
-    {
-       Debug.Log(message:"Matched");
-    }
+var tempObj = other.GetComponent<IDContainerBehaviour>();
+if (tempObj == null)
+   return;
 
+var otherID = tempObj.idObj;
+ Debug.Log(otherID == idObj ? "Matched" : "No Match");   
 }
-
+}
 }
