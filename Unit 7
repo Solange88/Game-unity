@@ -147,3 +147,36 @@ public void SetValue(IntData obj)
 value = obj.value;
 }
 }
+
+//IdContainer
+
+using UnityEngine;
+
+[RequireComponent(typeof(SpriteRenderer))]
+
+public class SpriteBehaviour : MonoBehaviour 
+{
+   private SpriteRenderer rendererObj;
+
+   private void Start()
+   {
+     rendererObj = GetComponent<SpriteRenderer>();
+   }
+
+public void ChangeRendererColor(ColorID obj)
+{
+    rendererObj.color = obj.value;
+}
+}
+
+//transform 
+
+using UnityEngine; 
+
+public class Transform Behaviour : MonoBehaviour
+{
+   public void ResetToZero()
+{
+   transform.position = Vector3.zero;
+}
+}
