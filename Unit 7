@@ -9,14 +9,26 @@ public class ID : ScriptableObject
 public ID idObj;
 }
 
+//assetmenu
+
+using UnityEngine; 
+
+[CreateAssetMenu]
+
+public class ColorID : ID
+{
+   public Color value = Color.red;
+}
+
 //matchbehaviour
 
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MatchBehaviour : MonoBehaviour
 {
 public ID idObj;
-private ID otherID; 
+public UnityEvent matchEvent, noMatchEvent; 
 
 private void OnTriggerEnter (Collider other) 
 {
@@ -27,11 +39,28 @@ if (tempObj == null)
 var otherID = tempObj.idObj;
 if (otherID == idObj)
 {
- Debug.Log(message:"Matched");  
+ matchEvent.Invoke();
 }
 else 
 {
-  Debug.Log(message:"No Match");
+  noMatchEvent.Invoke();
 }
 }
+}
+
+//sprite Behaviour
+
+using UnityEngine;
+
+[RequireComponent(typeof(SpriteRenderer))]
+
+public class SpriteBehaviour : MonoBehaviour
+{
+   private Sprite Renderer rendererObj;
+
+private void Start()
+{
+    rendererObj = GetComponent<SpriteRenderer>();
+}
+
 }
