@@ -1,5 +1,5 @@
 
-//scriptable object
+//scriptable objects
 
 using Unity Engine;
 [CreateAssetMenu] 
