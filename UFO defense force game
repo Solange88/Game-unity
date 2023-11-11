@@ -19,29 +19,22 @@ void Start()
 
 }
 
-void Update()
+  void Update()
+    {
+       horizontalInput = Input.GetAxis("Horizontal"); 
+       transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+
+if (transform.position.x < -xRange)
 {
-horizontalInput = Input.GetAxis("Horizontal"); 
-transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed); 
-if (transform.postition.x < -xRangd)
-{
-transform.position = new Vector3(-xRange,transform.postion.y, transform.postion.z)
+transform.position = new Vector3(-xRange,transform.position.y, transform.position.z);
 }
 
-if (transform.postition.x > xRange)
+if (transform.position.x > xRange)
 {
-transform.position = new Vector3(xRange,transform.postion.y, transform.postion.z)
+transform.position = new Vector3(xRange,transform.position.y, transform.position.z);
 }
-if (Input.GetKeyDown(KeyCode.Space))
-{
-      Instantiate(laserBolt, blaster.transform.position, laserBolt.transform.rotation);
-}
+    } 
 
-}
-private void OnTriggerEnter(Collider other)
-{
-  Destroy(other.gameObject);
-}
 }
 // move forwardscript
 
