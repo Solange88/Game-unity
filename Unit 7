@@ -9,15 +9,16 @@ public class ID : ScriptableObject
 public ID idObj;
 }
 
-//assetmenu
+//colorid assetmenu
 
+using System.Collections.Generic;
 using UnityEngine; 
 
 [CreateAssetMenu]
 
-public class ColorID : ID
+public class ColorIDDataList : ScriptableObject
 {
-   public Color value = Color.red;
+   public List<ColorID> colorIDList;
 }
 
 //matchbehaviour
