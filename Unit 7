@@ -52,7 +52,7 @@ else
 }
 }
 
-//sprite Behaviour
+//spriteBehaviour
 
 using UnityEngine;
 
