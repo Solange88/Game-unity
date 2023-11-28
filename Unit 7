@@ -268,3 +268,18 @@ public void CreateInstanceListRandomly(Vector3DataList obj)
    Instantiate(prefab, obj.vector3DList[num].value, Quaternion.identity);
 }
 }
+
+//GameAction 
+
+using UnityEngine;
+[CreateAssetMenu]
+
+public class GameAction : ScriptableObject
+{
+   public UnityAction raise;
+
+   public void RaiseAction()
+   {
+     raise?.Invoke();
+   }
+}
