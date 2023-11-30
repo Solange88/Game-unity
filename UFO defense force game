@@ -33,7 +33,12 @@ transform.position = new Vector3(xRange,transform.position.y, transform.position
 {
    Instantiate(laserBolt, blaster.transform.position, laserBolt.transform.rotation);
 }
-    } 
+
+  } 
+private void OnTriggerEnter(Collider other)
+{
+    Destroy(other.gameObject);
+}
 }
 // move forwardscript
 
