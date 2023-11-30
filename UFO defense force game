@@ -14,10 +14,6 @@ public Transform blaster;
 
 public GameObject laserbolt;
 
-void Start() 
-{
-
-}
 
   void Update()
     {
