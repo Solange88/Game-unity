@@ -17,7 +17,7 @@ public class IntData : ScriptableObject
 //floatdata
 using UnityEngine;
 
-[CreatAssetMenu]
+[CreateAssetMenu]
 public class FloatData : ScriptableObject
 
 {
