@@ -101,7 +101,7 @@ void Start()
 
 public IEnumerator OnMouseDown()
 {
-   offset = transform.postion - cameraObj.ScreenToWorldPoint(Input.mousrPosition);
+   offset = transform.postion - cameraObj.ScreenToWorldPoint(Input.mousePosition);
    draggable = true;
    yield return new WaitForFixedUpdate();
 
